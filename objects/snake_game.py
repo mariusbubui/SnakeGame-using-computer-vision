@@ -10,6 +10,7 @@ class SnakeGame:
         self.screen = screen
         self.snake = Snake(self)
         self.fruit = Fruit(self)
+        self.font = pygame.font.Font("assets/PoetsenOne-Regular.ttf", 25)
 
     def update(self):
         self.snake.move()
@@ -20,6 +21,7 @@ class SnakeGame:
         self.draw_background()
         self.snake.draw()
         self.fruit.draw()
+        self.draw_score()
 
     def draw_background(self):
         for row in range(CELL_NUMBER):
@@ -37,6 +39,11 @@ class SnakeGame:
                             col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                         pygame.draw.rect(
                             self.screen, dark_green, rectangle)
+
+    def draw_score(self):
+        score = len(self.snake.body) - 3
+        surface = self.font.render(f"Score:  {score}", True, BLACK)
+        self.screen.blit(surface, (CELL_SIZE/2, CELL_SIZE/2))
 
     def check_collision(self):
         if self.fruit.position == self.snake.body[0]:
