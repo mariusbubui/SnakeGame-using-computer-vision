@@ -22,8 +22,8 @@ class Fruit:
 
     def randomize(self):
         while True:
-            self.x = random.randint(0, CELL_NUMBER - 1)
-            self.y = random.randint(0, CELL_NUMBER - 1)
+            self.x = random.randint(2, CELL_NUMBER - 3)
+            self.y = random.randint(2, CELL_NUMBER - 3)
             if Vector2(self.x, self.y) not in self.game.snake.body:
                 self.position = Vector2(self.x, self.y)
                 break

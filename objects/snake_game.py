@@ -11,6 +11,7 @@ class SnakeGame:
         self.snake = Snake(self)
         self.fruit = Fruit(self)
         self.font = pygame.font.Font("assets/PoetsenOne-Regular.ttf", 25)
+        self.reset = True
 
     def update(self):
         self.snake.move()
@@ -61,3 +62,4 @@ class SnakeGame:
     def game_over(self):
         pygame.time.delay(500)
         self.snake.reset()
+        self.reset = True
