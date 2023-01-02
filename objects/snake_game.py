@@ -32,14 +32,14 @@ class SnakeGame:
                         rectangle = pygame.Rect(
                             col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                         pygame.draw.rect(
-                            self.screen, dark_green, rectangle)
+                            self.screen, DARK_GREEN, rectangle)
             else:
                 for col in range(CELL_NUMBER):
                     if col % 2 != 0:
                         rectangle = pygame.Rect(
                             col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                         pygame.draw.rect(
-                            self.screen, dark_green, rectangle)
+                            self.screen, DARK_GREEN, rectangle)
 
     def draw_score(self):
         score = len(self.snake.body) - 3
